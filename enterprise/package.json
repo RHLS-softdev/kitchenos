@@ -1,0 +1,27 @@
+{
+	"name": "kitchenos-enterprise",
+	"private": true,
+	"version": "0.6.0",
+	"description": "KitchenOS Premium \u2014 multi-kitchen sync, supplier ordering. Deployed as its own web app, never bundled into the free desktop installer (Hard Rule 1/3). See README.md.",
+	"type": "module",
+	"scripts": {
+		"dev": "vite",
+		"build": "vite build",
+		"preview": "vite preview",
+		"typecheck": "tsc -p tsconfig.json --noEmit"
+	},
+	"dependencies": {
+		"@clerk/react": "^6.4.3",
+		"convex": "^1.27.3",
+		"react": "^19.1.1",
+		"react-dom": "^19.1.1",
+		"stripe": "^17"
+	},
+	"devDependencies": {
+		"@types/react": "^19.1.10",
+		"@types/react-dom": "^19.1.7",
+		"@vitejs/plugin-react": "^5.0.0",
+		"typescript": "~5.9.2",
+		"vite": "^7.1.3"
+	}
+}

@@ -1,0 +1,28 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "24"
+
+      - name: Install dependencies
+        working-directory: enterprise
+        run: npm ci || npm install
+
+      - name: Build premium web app
+        working-directory: enterprise
+        run: npm run build
+
+      - name: Python backend syntax check
+        working-directory: core/backend
+        run: python -m compileall app

@@ -1,0 +1,14 @@
+Proprietary — All Rights Reserved
+
+Copyright (c) 2026 Rex Hernández (RHLS — Rex Hernández Linguistic Services)
+
+This directory (convex/) contains the Subtitle Toolkit Pro commercial
+layer: the Stripe checkout, webhook, purchase, and entitlement logic.
+
+This code is NOT licensed under the MIT license that applies to the rest
+of this repository. All rights reserved. No part of this directory may
+be reproduced, distributed, or transmitted in any form or by any means
+without the prior written permission of the copyright holder.
+
+The Stripe webhook in this directory is the only path that grants Pro
+access; it must never be redistributed or reused outside this project.
