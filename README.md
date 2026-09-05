@@ -122,6 +122,15 @@ org-scoped multi-tenancy, full CRUD for all resources, server-side
 validation, AI proxy for all four AI features, Alembic migration, and a
 seed script with demo data.
 
+> **Two auth systems, intentionally.** The free desktop app authenticates
+> against the local Flask backend (JWT, org-scoped, SQLite — see
+> `core/backend/app/auth.py`) and **never** calls Convex/Clerk/Stripe
+> (Hard Rule 1, enforced by `DESKTOP_FREE_BUILD` in `config.py`). The
+> Premium tier is a separate cloud web app that authenticates with Clerk
+> (orgs) and is granted only by the Stripe webhook in
+> `enterprise/convex/http.ts`. There is no shared session between the two;
+> a kitchen's Premium status is read from the cloud layer, not the local DB.
+
 **Artifact prototype** (`kitchenos_v2.jsx`) — frozen as a UI sandbox. Not
 connected to the backend; uses artifact-local storage and Claude.ai's
 built-in Anthropic proxy. Useful for quickly mocking up new screens before
